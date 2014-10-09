@@ -1,1 +1,0 @@
-[ $(echo "$(date "+%s")-$(date --date="$(zpool status tank | grep "scan: scrub" | awk '{print $11" "$12" "$13" "$14" "$15}')" +"%s")" | bc) -gt 604800 ] && echo "scrub" || echo "geen scrub"
